@@ -1,0 +1,18 @@
+git init //初始化一个仓库
+git add xxx //添加一个文件
+git commit -m "first commit" //添加本次修改信息
+git remote add origin url //添加远端仓库（前提是没有远端仓库）
+git remote rm origin //删除远端仓库（前提是有仓库）
+git remote origin set -url <URL> //把<URL>替换成新的url地址
+git push -u origin master //推到远端
+/***************git fetch****************/
+git fetch origin master //将远端仓库的master分支下载到本地当前brach中
+git log -p master ..origin/master //比较本地的master分支和origin/master分支的差别
+git merge origin/master //合并
+/********/
+git fetch origin master:tmp   //从远端仓库master分支获取最新，在本地建立tmp分支
+git diff tmp  //将当前分支和tmp对比
+git merge tmp  //合并tmp分支到当前分支
+/*******git pull********/
+git pull origin master//从远端获取最新版本并merge到本地
+//总结：git pull不太安全，git fetch比较安全
